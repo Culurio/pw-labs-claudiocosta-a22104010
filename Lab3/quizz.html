@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Cláudio Costa">
+    <meta name="keywords" content="Quizz">
+    <meta name="description" content="Website sobre Den Haag">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Quizz Sobre a cidade</title>
+</head>
+<body>
+<header>
+    <h1>Den Haag</h1>
+    <img src="images/city.png" alt = "Den Haag">
+</header>
+<br>
+<nav>
+    <p><a href="index.html"><i class="fa fa-fort-awesome" style="font-size:36px"></i></a> | <a href="local.html"><i class="fa fa-map-marker" style="font-size:36px"></i></a> | <a href="multimedia.html"><i class="fa fa-camera-retro" style="font-size:36px"></i></a>
+        | <a href="info.html"><i class="fa fa-info" style="font-size:36px"></i></a> | <a href="quizz.html"><i class="fa fa-user" style="font-size:36px"></i></a> | <a href="html5-css.html"><i class="fa fa-html5" style="font-size:36px"></i></a></p>
+</nav>
+
+<main>
+    <div>
+        <h3>Quizz</h3>
+        <p>Aqui nesta pagina vamos fazer um pequeno quizz sobre a cidade apresentada</p>
+    </div>
+
+    <form method="post"
+          action="mailto:claudiohcx@gmail.com"
+          enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Mostre que conhece cidade</legend>
+        </fieldset>
+
+        <fieldset>
+            <legend>Info do usuário</legend>
+            <p>Nome: <input type="text" id="user_fname" name="nome" required></p>
+            <p>Apelido: <input type="text" id="user_lname" name="apelido" required></p>
+            <p>Email: <input type="text" id="email" name="email" required></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Perguntas</legend>
+            <p>Qual das seguintes opções diz respeito ao nome da cidade:<br>
+                <input type="radio" id="den_haag" name="city_name" value="den_haag">
+                <label for="den_haag">Den Haag</label>
+                <input type="radio" id="rotterdam" name="city_name" value="rotterdam">
+                <label for="rotterdam">Rotterdam</label>
+                <input type="radio" id="amsterdam" name="city_name" value="amsterdam">
+                <label for="amsterdam">Amsterdam</label>
+            </p>
+
+            <label for="date">Quem fez esta pagina ?</label>
+            <input class="ex1" type="text" id="fname" placeholder="Nome do autor">
+
+            <label for="date">Em que dia é que estás a preencher isto?</label>
+            <input class="ex1" type="date" id="date" name="CurrentDate" min="2022-03-11">
+
+            <label for="nlcolor">Escolhe a cor holandesa</label>
+            <input class="ex1" type="color" id="nlcolor" name="nlcolor" value="#f6b73c">
+
+            <label for="quantity">Escolhe um numero entre 1 a 5:</label>
+            <input class="ex1" type="number" id="quantity" name="quantity" min="1" max="5">
+
+            <label for="barra">Quanto gostas desta pagina:</label>
+            <input class="ex1" type="range" id="barra" name="barra" min="0" max="10">
+
+            <label for="check">ESTÁS BEM ?</label>
+            <input type="checkbox" id="check" name="check">
+
+            <input class="ex1" type="image" src="images/submit.png" alt="Submit">
+        </fieldset>
+    </form>
+</main>
+
+<footer>
+    <address>
+        Realizado por: <a href="mailto:claudiohcx@gmail.com">Cláudio Costa</a>.
+        Numero de aluno:<a href="https://moodle.ensinolusofona.pt/user/profile.php?id=7181"> 22104010 </a>
+        Universidade Lusófona 2022
+    </address>
+</footer>
+</body>
+</html>

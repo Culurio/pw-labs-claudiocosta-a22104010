@@ -1,0 +1,79 @@
+*{
+font-family: 'Noto Sans JP', sans-serif;
+}
+body{
+    background-color:khaki;
+}
+figure {
+    display: inline-block;
+}
+table {
+  table-layout: fixed;
+  width: 450px;
+  border: 1px solid red;
+}
+
+td {
+  border: 1px solid blue;
+}
+fieldset{
+    background-color:Green;
+}
+/* unvisited link */
+a:link {
+  color: CornflowerBlue;
+}
+
+/* visited link */
+a:visited {
+  color: CornflowerBlue;
+}
+
+/* mouse over link */
+a:hover {
+  color: CornflowerBlue;
+}
+
+/* selected link */
+a:active {
+  color: CornflowerBlue;
+}
+
+h1:before{
+content: "🎌"
+}
+
+#poem {
+  background: red;
+}
+td:nth-child(odd) {
+  background: green;
+}
+
+td:nth-child(even) {
+  background: white;
+}
+
+th:nth-child(odd) {
+  background: green;
+}
+
+input.ex1{
+  display: block;
+}
+
+iframe{
+  border: 1px solid black;
+}
+
+h2.intro::first-letter{
+  color: #ff0000;
+  font-size: xx-large;
+}
+fieldset{
+  border:2px solid green;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  border-radius:8px;
+}
+

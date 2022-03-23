@@ -1,0 +1,260 @@
+*{
+font-family: 'Arvo', serif;
+box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.capitais {
+ display: flex;
+ box-sizing: border-box;
+ background-color: LightBlue;
+ flex-flow: row wrap;
+ justify-content: space-between;
+ align-items: space-between;
+ padding: 50px;
+  }
+
+.capitais > div{
+ display: flex;
+ flex: 1 0 21%;
+ justify-content: space-around;
+ border-radius: 20px;
+ box-shadow: 5px 5px 15px #888888;
+ height:120px;
+ margin: 10px;
+ }
+
+ .capitais img{
+ border-radius: 20px 0 0 20px;
+ height: 100%;
+ }
+
+ .capitais div div:last-child {
+ width:100%;
+ background-color: white;
+ padding: 20px;
+ border-radius: 0 20px 20px 0;
+
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ }
+
+
+ .menu{
+ display:flex;
+ }
+
+ .menu a{
+   padding: 20px;
+   background-color: whitesmoke;
+   margin: 2px;
+   font-weight: bold;
+   text-decoration: none;
+   color: black;
+   box-shadow: 2px 3px 3px lightgrey;
+   border-radius: 5px;
+ }
+ .menu a:hover{
+    background-color: lightgrey;
+  }
+ .menu a:last-child{
+   margin-left: auto;
+   background-color: dodgerblue;
+   color: white;
+   border-radius: 10px;
+ }
+
+ .background-menu{
+   display:flex;
+   background-image: url("images/Background.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   justify-content: center;
+   align-items: center;
+   font-size: 5rem;
+ }
+
+ p.titulo{
+ position: relative;
+ font-family: 'Bungee', cursive;
+ color: yellow;
+   font-size: 1em;
+   letter-spacing: 15px;
+   text-transform: uppercase;
+   transform: rotate(-5deg);
+ }
+
+ .dicas{
+  display: flex;
+  background-color: lightblue;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 20px;
+   }
+
+ .dicas > div{
+     display: flex;
+     flex: 1 0 21%;
+     flex-direction: column;
+     justify-content: space-around;
+     background-color: white;
+     border-radius: 20px;
+     margin: 20px;
+     padding 10px 20px;
+     box-shadow: 5px 5px 15px #888888;
+     }
+
+  .dicas p:last-child {
+  background-color: lightblue;
+  height:100%;
+  padding: 10px;
+  border-radius: 30px;
+  }
+
+
+
+  .barreiro{
+      background-image: url("images/barreiro.jpg");
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-size: cover;
+      grid-area: barreiro;
+  }
+
+  .aviao{
+        background-size: cover;
+        max-width: 100vw;
+        grid-area: aviao;
+        max-height: 100vh;
+  }
+
+  .rio{
+      background-image: url("images/rio.jpg");
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-size: cover;
+      grid-area: rio;
+  }
+
+  .leiria{
+      background-image: url("images/leiria.jpg");
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-size: cover;
+      grid-area: leiria;
+  }
+
+  .kiev{
+      background-image: url("images/kiev.jpg");
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-position: center;
+      background-size: cover;
+      grid-area: kiev;
+  }
+
+  .amsterdao{
+      background-image: url("images/amsterdam.jpg");
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-size: cover;
+      background-position: center;
+      grid-area: amsterdao;
+  }
+
+  .destinos div{
+      position: relative;
+      padding-left: 15px;
+  }
+
+  .tipo{
+      position: absolute;
+  }
+
+  .cidade{
+      position: absolute;
+      bottom: 60px;
+  }
+
+  .frase{
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+  }
+
+  .button {
+  border: none;
+  color: white;
+  padding: 16px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  z-index:1
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button1:hover {background-color: lightgrey;}
+
+  @media(min-width : 901px){ /* PC */
+      .destinos{
+           display: grid;
+           background-color:lightblue;
+           grid-template-columns: 0.5fr 0.5fr 0.5fr 1fr;
+           grid-template-rows: 200px 200px;
+           color:white;
+           gap: 10px;
+           grid-template-areas:
+           'barreiro leiria kiev aviao'
+           'amsterdao amsterdao rio aviao'
+           ;
+      }
+  }
+
+  @media(max-width : 900px){ /*Telemovel*/
+      .destinos{
+        display: grid;
+          gap: 10px;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 200px 200px;
+          grid-template-areas:
+          'barreiro leiria'
+          'kiev rio'
+          '. .'
+          'amsterdao amsterdao'
+          'aviao aviao'
+          '. .'
+      }
+      .destinos > div{
+          min-height: 200px;
+          height: 200px;
+      }
+      .menu {
+          height: 100px;
+      }
+
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: lightblue;
+        color: white;
+        text-align: center;
+      }
+  }
