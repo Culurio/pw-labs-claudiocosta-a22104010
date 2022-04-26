@@ -1,8 +1,8 @@
 def ler_numero():
     try:
-        int(input('Insira um inteiro entre 1 e 10'))
+       int(input('Insira um inteiro'))
     except:
-        print('Não meteu um numero inteiro')
+        print('Não meteu um numero inteiro')   
         
 def imprime_resultados(n,positivo,par):
     if positivo:
