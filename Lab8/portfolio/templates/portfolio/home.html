@@ -1,0 +1,10 @@
+<!-- home.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+<h3>Home Page</h3>
+<p>Esta aqui é a pagina inicial com uma breve introdução</p>
+{% load static %}
+<img src="{% static 'portfolio/images/image.png' %}">
+{% endblock %}
