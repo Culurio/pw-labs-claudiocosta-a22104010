@@ -1,20 +1,26 @@
 * {
     padding: 0; 
     margin: 0;
+    background-color: black;
     box-sizing:border-box;
     font-family: sans-serif;
   }
   
   header {
-    height: 10vh; 
-    background: purple;
-    color: white;
+    height: 15vh; 
+    opacity: 1;
     top: 0;  
     
     /* alinhando logo e menu */
     display:flex;
     justify-content: space-between;  
     align-items: center;
+  }
+
+.top-image{
+  background-image: url("static/portfolio/images/background-header.jpeg");
+    height: 480px;
+    padding-top: 195px;
   }
   
   header div {
@@ -24,15 +30,23 @@
   
   header nav {
     display:flex;
+    height: 15vh;
     justify-content: flex-end;  
   }
-  
-  
-  nav a {
-    padding: 0 1em;
+    
+  .top-nav-bar a {
+    box-shadow: inset 0 0 0 0 grey;
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
     text-decoration: none;
-    font-size: 1rem;
-    color: lightgray;
+  }
+
+  .top-nav-bar a:hover{
+    box-shadow: inset 150px 0 0 0 grey;
+    background-color: grey;
   }
   
   
@@ -46,6 +60,6 @@
     height:5vh;
     display:flex;
     justify-content: flex-end;
-    padding: 0 2vw;
+    padding: 0 1vw;
     align-items: center;
   }

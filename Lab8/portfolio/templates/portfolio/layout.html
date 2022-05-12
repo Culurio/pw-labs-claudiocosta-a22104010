@@ -12,13 +12,25 @@
 <body>
     <header>
         <div>Cláudio Costa</div>
-        <nav>
-            <a href="{% url 'portfolio:home' %}">home</a>
-            <a href="{% url 'portfolio:licenciatura' %}">licenciatura</a>
-            <a href="">about</a>
-            <a href="">contact</a>
+        <nav class="top-nav-bar" role="navigation">
+            <div class="nav-button">
+                <a href="{% url 'portfolio:home' %}">home</a>
+            </div>
+            <div class="nav-button">
+                <a href="{% url 'portfolio:licenciatura' %}">licenciatura</a>
+            </div>
+            <div class="nav-button">
+                <a href="">about</a>
+            </div>
+            <div class="nav-button">
+                <a href="">contact</a>
+            </div>
         </nav>
     </header>
+    <section class="top-image">
+        {% load static %}
+        <img src="{% static 'portfolio/images/background-header.jpeg' %}">
+    </section>
     <main>
         {% block main %}
         {% endblock main %}
