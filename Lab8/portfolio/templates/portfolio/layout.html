@@ -11,21 +11,16 @@
 
 <body>
     <div class="page-layout">
-        <header class="top-bar" style="color:red ;">
+        <header class="top-bar">
             <nav class="top-nav-bar" role="navigation">
-                <div class="nav-button">
-                    <a href="{% url 'portfolio:home' %}">home</a>
-                </div>
-                <div class="nav-button">
-                    <a href="{% url 'portfolio:licenciatura' %}">licenciatura</a>
-                </div>
-                <div class="nav-button">
-                    <a href="">about</a>
-                </div>
-                <div class="nav-button">
-                    <a href="">contact</a>
-                </div>
+                <ul>
+                    <li><a href="{% url 'portfolio:home' %}">home</a></li>
+                    <li><a href="{% url 'portfolio:licenciatura' %}">licenciatura</a></li>
+                    <li><a href="">about</a></li>
+                    <li><a href="">contact</a></li>
+                </ul>
             </nav>
+            <div class="welcome-text">Bem vindo ao meu portfolio</div>
         </header>
         <main class="main-body">
             {% block main %}
