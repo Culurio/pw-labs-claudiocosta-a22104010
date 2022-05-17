@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Cadeira(models.Model):
-    """def __init__(self,name,year,etcs,semester,school_year,ranking,topics,teacher):
+    def __init__(self,name,year,etcs,semester,school_year,ranking,topics,teacher):
         self.name = name
         self.year = year
         self.etcs = etcs
@@ -11,7 +11,7 @@ class Cadeira(models.Model):
         self.ranking = ranking
         self.topics = topics
         self.teacher = teacher
-"""
+
     name = models.CharField(max_length=30)
     year = models.IntegerField(default=0)
     etcs = models.IntegerField(default=0)
