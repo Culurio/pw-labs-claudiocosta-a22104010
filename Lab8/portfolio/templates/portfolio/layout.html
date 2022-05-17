@@ -10,32 +10,29 @@
 </head>
 
 <body>
-    <header>
-        <div>Cláudio Costa</div>
-        <nav class="top-nav-bar" role="navigation">
-            <div class="nav-button">
-                <a href="{% url 'portfolio:home' %}">home</a>
-            </div>
-            <div class="nav-button">
-                <a href="{% url 'portfolio:licenciatura' %}">licenciatura</a>
-            </div>
-            <div class="nav-button">
-                <a href="">about</a>
-            </div>
-            <div class="nav-button">
-                <a href="">contact</a>
-            </div>
-        </nav>
-    </header>
-    <section class="top-image">
-        {% load static %}
-        <img src="{% static 'portfolio/images/background-header.jpeg' %}">
-    </section>
-    <main>
-        {% block main %}
-        {% endblock main %}
-    </main>
-    <footer>ULHT, 2022</footer>
+    <div class="page-layout">
+        <header class="top-bar" style="color:red ;">
+            <nav class="top-nav-bar" role="navigation">
+                <div class="nav-button">
+                    <a href="{% url 'portfolio:home' %}">home</a>
+                </div>
+                <div class="nav-button">
+                    <a href="{% url 'portfolio:licenciatura' %}">licenciatura</a>
+                </div>
+                <div class="nav-button">
+                    <a href="">about</a>
+                </div>
+                <div class="nav-button">
+                    <a href="">contact</a>
+                </div>
+            </nav>
+        </header>
+        <main class="main-body">
+            {% block main %}
+            {% endblock main %}
+        </main>
+        <footer class="bottom">ULHT, 2022</footer>
+    </div>
 </body>
 
 </html>
