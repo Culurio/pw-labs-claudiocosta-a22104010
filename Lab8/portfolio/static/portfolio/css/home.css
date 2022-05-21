@@ -1,0 +1,23 @@
+.home-container {
+    display: flex;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    padding: 50px;
+  }
+
+
+  .home-container>div {
+    display: flex;
+    flex: 1 0 30%;
+    font-size: 2vw;
+    justify-content: space-around;
+    border-radius: 20px;
+    height: 500px;
+    margin: 10px;
+  }
+  
+  .home-container img {
+    height: 700px;
+  }

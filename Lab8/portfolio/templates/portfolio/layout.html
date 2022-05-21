@@ -6,6 +6,10 @@
     <meta charset="UTF-8">
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    {% block extrahead %}{% endblock %}
     <title>Portfolio</title>
 </head>
 
@@ -19,8 +23,9 @@
                     <li><a href="">about</a></li>
                     <li><a href="">contact</a></li>
                 </ul>
+                {% block header %}
+                {% endblock header %}
             </nav>
-            <div class="welcome-text">Bem vindo ao meu portfolio</div>
         </header>
         <main class="main-body">
             {% block main %}
