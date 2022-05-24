@@ -31,7 +31,7 @@ class Project(models.Model):
     year = models.IntegerField(default=0)
     github = models.URLField()
     video_url = models.URLField()
-    tech = models.URLField()
+    tech = models.CharField(max_length=200)
     skills = models.CharField(max_length=500)
     participants = models.ForeignKey(Student, on_delete=models.CASCADE)
 
