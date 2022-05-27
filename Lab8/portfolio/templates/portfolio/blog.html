@@ -1,0 +1,32 @@
+{% extends 'portfolio/layout.html' %}
+{% block header %}
+<div class="welcome-text">Blog</div>
+{% endblock %}
+{% block main %}
+
+{% for post in posts %}
+<li>{{ post.title }}
+    {{ post.author }}
+    {{ post.body }}
+</li>
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <a href="{% url 'portfolio:blog' %}">Cancelar</a>
+    <input type="submit" value="Criar">
+</form>
+<script>
+
+    var name = "{{ user.id }}"
+    document.getElementById("user").value = name;
+
+</script>
+
+{% endif %}
+
+{% endblock %}

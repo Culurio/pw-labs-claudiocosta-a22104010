@@ -2,6 +2,7 @@ from pyexpat import model
 from tkinter import CASCADE
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -35,6 +36,9 @@ class Project(models.Model):
     skills = models.CharField(max_length=500)
     participants = models.ForeignKey(Student, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.title
+
 class Subject(models.Model):
 
     name = models.CharField(max_length=30)
@@ -53,6 +57,14 @@ class Subject(models.Model):
 
     def __str__(self):
         return self.name
+
+class Post(models.Model):
+    title = models.CharField(max_length = 255)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.TextField()
+
+    def __str__(self):
+        return self.title + ' from ' + str(self.author)
 
 
         

@@ -18,10 +18,15 @@
         <header class="top-bar">
             <nav class="top-nav-bar" role="navigation">
                 <ul>
-                    <li><a href="{% url 'portfolio:home' %}">home</a></li>
-                    <li><a href="{% url 'portfolio:licenciatura' %}">licenciatura</a></li>
-                    <li><a href="{% url 'portfolio:projetos' %}">projetos</a></li>
-                    <li><a href="">contact</a></li>
+                    <li><a href="{% url 'portfolio:home' %}">Home</a></li>
+                    <li><a href="{% url 'portfolio:licenciatura' %}">Licenciatura</a></li>
+                    <li><a href="{% url 'portfolio:projetos' %}">Projetos</a></li>
+                    <li><a href="{% url 'portfolio:blog' %}">Blog</a></li>
+                    {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'portfolio:logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'portfolio:login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
                 {% block header %}
                 {% endblock header %}
