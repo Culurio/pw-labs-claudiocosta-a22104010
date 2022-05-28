@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from multiprocessing import AuthenticationError
 import datetime
-from portfolio.forms import PostForm
+from portfolio.forms import *
 
 from portfolio.models import Subject, Teacher, Project, Post
 
@@ -65,6 +65,40 @@ def view_new_post(request):
         return HttpResponseRedirect(reverse('portfolio:blog'))
 
     context = {'form': form,
-        'posts': Post.objects.all()
+        'posts': Post.objects.all().order_by('post_date')
     }
     return render(request, 'portfolio/blog.html', context)
+
+@login_required
+def view_edit_post(request, post_id):
+
+    post = Post.objects.get(id=post_id)
+    form = PostForm(request.POST or None, instance=post)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:blog'))
+
+    context = {'form': form, 'post_id': post_id}
+    return render(request, 'portfolio/blog_edit.html', context)
+
+def view_delete_tarefa(request, post_id):
+
+    post = Post.objects.get(id=post_id)
+    post.delete()
+    return HttpResponseRedirect(reverse('portfolio:blog'))
+
+
+@login_required
+def view_quizz(request):
+
+    form = PostForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:quizz'))
+
+    context = {'form': form,
+        'quizzes': Quizz.objects.all()
+    }
+    return render(request, 'portfolio/quizz.html', context)

@@ -3,6 +3,7 @@ from tkinter import CASCADE
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
+from datetime import datetime, date
 
 # Create your models here.
 
@@ -62,9 +63,36 @@ class Post(models.Model):
     title = models.CharField(max_length = 255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
+    post_date = models.DateField(auto_now_add= True)
 
     def __str__(self):
         return self.title + ' from ' + str(self.author)
+
+
+class Answer(models.Model):
+    answer_text = models.CharField(max_length = 255)
+    is_correct = models.BooleanField(default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.answer_text
+
+class Question(models.Model):
+    question_text = models.CharField(max_length = 255)
+    points = models.PositiveIntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    answers = models.ManyToManyField(Answer)
+
+    def __str__(self):
+        return self.question_text
+
+class Quizz(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    questions = models.ManyToManyField(Question)
+
+    def __str__(self):
+        return self.title
 
 
         
